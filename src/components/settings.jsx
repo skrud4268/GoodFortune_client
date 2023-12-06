@@ -307,8 +307,8 @@ export default function Settings() {
           </div>
         </div>
       </div>
-      <div className="overlap">
-        <div className="text-wrapper">Profile Settings</div>
+      <div className="page-group">
+        <div className="page-title">Profile Settings</div>
         <div className="profile-image">
           <figure
             className="image-container"
@@ -337,14 +337,14 @@ export default function Settings() {
             </div>
           </label>
           <div
-            className="text-wrapper-3"
+            className="remove-btn"
             onClick={handleRemoveImage}
             style={{ cursor: "pointer" }}
           >
             Remove
           </div>
-          <img className="line" src="/img/line-9.svg" />
-          <div className="text-wrapper-4">Image requirements:</div>
+          <img className="divide-line" src="/img/line-9.svg" />
+          <div className="requirements">Image requirements:</div>
           <p className="min-px-px">
             Min. 400 px * 400 px
             <br />
@@ -396,7 +396,7 @@ export default function Settings() {
                 required=""
               />
             </div>
-            <label htmlFor="email" className="text-wrapper-6">
+            <label htmlFor="email" className="fieldName-long">
               Email Address *
             </label>
           </div>
@@ -412,7 +412,7 @@ export default function Settings() {
                 required=""
               />
             </div>
-            <label htmlFor="confirmEmail" className="text-wrapper-6">
+            <label htmlFor="confirmEmail" className="fieldName-long">
               Confirm Email Address *
             </label>
           </div>
@@ -463,7 +463,7 @@ export default function Settings() {
             </label>
           </div>
           <div className="group-7">
-            <label htmlFor="pronoun" className="text-wrapper-6">
+            <label htmlFor="pronoun" className="fieldName-long">
               Pronoun
             </label>
             <div className="div-3">
@@ -471,6 +471,7 @@ export default function Settings() {
                 className="form-control dropdown-select"
                 id="pronoun"
                 name="pronoun"
+                value={form.pronoun}
                 onChange={(e) => updateForm({ pronoun: e.target.value })}
               >
                 <option value="">Select...</option>
