@@ -46,6 +46,7 @@ export default function Settings() {
           firstName: data.firstName,
           lastName: data.lastName,
           email: data.email,
+          pronoun: data.pronoun,
           imageUrl: data.imageUrl,
         });
       } catch (error) {
@@ -56,14 +57,14 @@ export default function Settings() {
     fetchFirstUserData();
   }, []);
 
-  // These methods will update the state properties.
+  // update the state properties.
   function updateForm(value) {
     return setForm((prev) => {
       return { ...prev, ...value };
     });
   }
 
-  // This function will handle the submission.
+  // handle the submission.
   async function onSubmit(e) {
     e.preventDefault();
     // Validation for required fields
@@ -111,7 +112,6 @@ export default function Settings() {
     try {
       console.log("Sending data to server");
       const response = await fetch(configData.SERVER_URL + "/settings", {
-        // Change to your API's update endpoint
         method: "PUT", // or 'PATCH' depending on your API
         // body: formData,
         crossDomain: true,
@@ -471,10 +471,6 @@ export default function Settings() {
                 <option value="other">Other</option>
               </select>
             </div>
-            {/* <div className="div-3">
-              <img className="polygon" src="/img/triangle.svg" />
-            </div>
-            <div className="text-wrapper-6">Pronoun</div> */}
           </div>
         </form>
         <input
