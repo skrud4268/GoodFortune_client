@@ -120,8 +120,8 @@ export default function Settings() {
         },
         body: JSON.stringify({
           userId, // Make sure to include this in the body
-          fname: form.firstName, // Update field names to match server expectations
-          lname: form.lastName,
+          firstName: form.firstName, // Update field names to match server expectations
+          lastName: form.lastName,
           email: form.email,
           confirmEmail: form.confirmEmail,
           password: form.password,
