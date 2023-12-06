@@ -25,7 +25,11 @@ export default function Settings() {
     pronoun: "",
     imageUrl: "",
   });
-  const navigate = useNavigate();
+
+  const [displayName, setDisplayName] = useState({
+    firstName: "",
+    lastName: "",
+  });
 
   useEffect(() => {
     const fetchFirstUserData = async () => {
@@ -48,6 +52,11 @@ export default function Settings() {
           email: data.email,
           pronoun: data.pronoun,
           imageUrl: data.imageUrl,
+        });
+
+        setDisplayName({
+          firstName: data.firstName,
+          lastName: data.lastName,
         });
       } catch (error) {
         console.error("Fetching first user data failed:", error);
@@ -314,7 +323,7 @@ export default function Settings() {
             )}
           </figure>
           <div className="div">
-            {form.firstName} {form.lastName}
+            {displayName.firstName} {displayName.lastName}
           </div>
           <label className="upload-group">
             <input
@@ -462,6 +471,7 @@ export default function Settings() {
                 className="form-control dropdown-select"
                 id="pronoun"
                 name="pronoun"
+                onChange={(e) => updateForm({ pronoun: e.target.value })}
               >
                 <option value="">Select...</option>
                 <option value="he/him">He/Him</option>
