@@ -12,6 +12,32 @@
   font-family: "Gabriela", Helvetica;
 }
 
+.page-group {
+  position: absolute;
+  /* width: 1406px;
+    height: 1116px; */
+  width: 70%;
+  height: 100%;
+  top: 1px;
+  left: 306px;
+}
+
+.page-title {
+  position: absolute;
+  width: 297px;
+  height: 58px;
+  top: 7px;
+  left: 9px;
+  font-family: "Noto Serif", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 40px;
+  text-align: start;
+  letter-spacing: 0;
+  line-height: 69px;
+  white-space: nowrap;
+}
+
 .profile-image {
   position: absolute;
   width: 350px;
